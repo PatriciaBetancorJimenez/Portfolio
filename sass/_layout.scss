@@ -1,0 +1,461 @@
+//**********************************************NAVBAR
+.nav {
+  padding: 0.5rem 8rem;
+  background-color: $color-1;
+
+  display: flex;
+  align-items: center;
+
+  text-transform: uppercase;
+
+  position: sticky;
+  top: 0;
+  // width: 100%;
+  z-index: 5;
+  box-shadow: 0 1rem 5rem rgba($color-1, 0.6);
+
+  &__logo-link {
+    @include link($color-2, $color-3);
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__logo-text {
+    font-size: 2.5rem;
+  }
+  &__list {
+    margin-left: auto;
+    display: flex;
+    // align-items: center;
+    font-weight: 300;
+  }
+
+  &__item {
+    list-style: none;
+    padding: 1.5rem 2rem;
+
+    font-size: 1.5rem;
+    transition: all 0.3s;
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &:hover {
+      transform: rotate(3deg);
+    }
+  }
+
+  &__link {
+    @include link($color-2, $color-3);
+  }
+}
+
+//**********************************************HEADER
+.header {
+  height: 100vh;
+  margin-top: -55px;
+  position: relative;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color-3, 0.7);
+    z-index: 3;
+  }
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+  }
+
+  &__text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    z-index: 4;
+    color: $color-2;
+    & > *:not(:last-child) {
+      font-family: "Cormorant Garamond", serif;
+    }
+  }
+
+  &__h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__hr {
+    height: 0.05rem;
+    color: $color-2;
+    width: 30%;
+    background-color: $color-2;
+    margin: 2em;
+    box-shadow: 0 0.1rem 1rem $color-2;
+  }
+  &__h2 {
+    font-size: 2.5rem;
+  }
+
+  &__button {
+    @include link($color-3, $color-1);
+    margin: 3rem auto;
+    border-radius: 20px;
+    background-color: $color-2;
+    padding: 1.5rem;
+    display: block;
+    text-align: center;
+    width: 20rem;
+
+    text-transform: uppercase;
+
+    box-shadow: 0 0.25rem 2rem $color-2;
+    transition: all 0.3s;
+    &:hover {
+      box-shadow: 0 0.1rem 1rem $color-2;
+      transform: translateY(2px);
+    }
+  }
+}
+//**********************************************PROJECTS
+.main {
+  line-height: 2.5rem;
+  padding: 8rem;
+  text-align: justify;
+
+  & > *:not(:last-child) {
+    margin-bottom: 8rem;
+  }
+}
+
+.project {
+  &__upper {
+    display: flex;
+
+    justify-content: center;
+  }
+  &__left {
+    flex: 0 0 15%;
+    letter-spacing: 2rem;
+  }
+
+  &__header {
+    display: block;
+    font-size: 12rem;
+    line-height: 0.9;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-family: "Syncopate", sans-serif;
+    text-transform: uppercase;
+    background: radial-gradient(circle, $color-2, $color-3);
+    background-clip: text;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &:hover {
+      background-image: linear-gradient(to left, $color-3, $color-2);
+    }
+  }
+
+  &__right {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__item {
+    width: 40%;
+  }
+  &__title {
+    font-size: 2.5rem;
+
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__figure {
+    margin: 5rem auto;
+    position: relative;
+    box-shadow: 0 1rem 5rem rgba($color-1, 0.6);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:hover > :first-child {
+      transition: all 0.5s;
+
+      opacity: 1;
+    }
+  }
+
+  &__overlay {
+    @include overlay;
+
+    &--1 {
+      background-color: rgba($color-3, 0.6);
+    }
+    &--2 {
+      background-color: rgba($color-4, 0.6);
+    }
+  }
+
+  &__buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+  }
+
+  &__button {
+    @extend .header__button;
+    padding: 1rem 1.25rem;
+    font-size: 1.4rem;
+    margin: 0;
+    width: 10rem;
+
+    &--1 {
+      @include link($color-3, $color-1);
+    }
+    &--2 {
+      @include link($color-4, $color-1);
+    }
+    &--3 {
+      @include link($color-4, $color-1);
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0.5rem solid $color-1;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  &__img-responsive {
+    position: absolute;
+    right: 3.5rem;
+    top: 3.5rem;
+    width: 30%;
+    border: 0.5rem solid $color-1;
+    border-bottom: 2.5rem solid $color-1;
+    border-radius: 10px;
+    box-shadow: 0 1rem 5rem rgba($color-1, 0.6);
+  }
+
+  &__description {
+    min-height: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    justify-content: space-between;
+  }
+
+  &__h4 {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  &__technologies {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &--1 {
+      color: $color-3;
+    }
+    &--2 {
+      color: $color-4;
+    }
+  }
+
+  &__tag {
+    position: relative;
+    font-size: 10rem;
+
+    transition: all 0.3s;
+
+    &:hover {
+      transform: rotate(10deg);
+    }
+  }
+
+  &__tag-text {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $color-2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__hr {
+    width: 50%;
+    margin: 6rem auto;
+  }
+
+  &__center {
+    margin: auto;
+  }
+  &__item-center {
+    width: 50%;
+    margin: auto;
+  }
+}
+//**********************************************SKILLS
+.skills {
+  &__header {
+    @extend .project__header;
+    writing-mode: horizontal-tb;
+    text-transform: uppercase;
+    transform: rotate(360deg);
+    text-align: center;
+    background-image: linear-gradient(to bottom, $color-3, $color-2);
+  }
+  &__box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: center;
+    margin: 4rem auto;
+
+    background-color: $color-2;
+  }
+
+  &__figure {
+    height: 15rem;
+    width: 15rem;
+    margin: 3rem;
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__h4 {
+    @extend .project__h4;
+    text-align: center;
+  }
+  &__list {
+    text-align: center;
+  }
+
+  &__item {
+    padding: 2rem;
+    display: inline-block;
+    font-size: 1.8rem;
+  }
+}
+
+//**********************************************CONTACT
+.contact {
+  background: linear-gradient(180deg, $color-3, $color-1);
+  position: relative;
+  &__wave {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &__header {
+    @extend .skills__header;
+  }
+
+  &__form-box {
+    position: relative;
+    z-index: 3;
+    margin-top: 4rem;
+  }
+
+  &__form {
+    min-height: 60rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    width: 30%;
+    & > * {
+      border-radius: 25px;
+      padding: 2rem;
+      border: none;
+      border-bottom: 2px solid $color-2;
+      font-size: 1.6rem; //16px
+
+      font-family: "Josefin Sans", sans-serif;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__submit {
+    @extend .header__button;
+    margin-top: 0;
+    border: none;
+    color: $color-3;
+  }
+}
+//**********************************************FOOTER
+.footer {
+  color: $color-2;
+
+  background-color: $color-1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  & > * {
+    margin: 4rem;
+    padding: 4rem;
+  }
+
+  &__nav {
+    text-decoration: underline;
+    padding-bottom: 1rem;
+    line-height: 10%;
+  }
+  &__list {
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+  }
+
+  &__item {
+    margin: 1rem auto;
+  }
+
+  &__link {
+    @include link($color-2, $color-3);
+  }
+
+  &__center {
+    border-left: 1px solid $color-2;
+    border-right: 1px solid $color-2;
+  }
+  &__icon {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    @include link($color-2, $color-3);
+  }
+}

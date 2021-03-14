@@ -1,0 +1,29 @@
+@mixin link($color-link, $color-hover) {
+  &:link,
+  &:visited,
+  &:active {
+    text-decoration: none;
+    color: $color-link;
+    display: block;
+    cursor: pointer;
+  }
+
+  &:hover {
+    color: $color-hover;
+  }
+}
+
+@mixin overlay() {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+
+  justify-content: center;
+  align-items: flex-end;
+}
