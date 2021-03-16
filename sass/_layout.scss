@@ -10,7 +10,7 @@
 
   position: sticky;
   top: 0;
-  // width: 100%;
+
   z-index: 5;
   box-shadow: 0 1rem 5rem rgba($color-1, 0.6);
 
@@ -23,6 +23,7 @@
 
   &__logo-text {
     font-size: 2.5rem;
+    padding: 1.5rem 2rem;
   }
   &__list {
     margin-left: auto;
@@ -37,6 +38,7 @@
 
     font-size: 1.5rem;
     transition: all 0.3s;
+
     &:last-child {
       padding-right: 0;
     }
@@ -89,7 +91,7 @@
     z-index: 4;
     color: $color-2;
     & > *:not(:last-child) {
-      font-family: "Cormorant Garamond", serif;
+      font-family: "Cinzel", serif;
     }
   }
 
@@ -97,9 +99,22 @@
     font-size: 4.5rem;
     font-weight: 700;
     text-transform: uppercase;
+    @media only screen and (max-width: $bp-large) {
+      //1100px
+
+      font-size: 4rem;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      //900px
+
+      font-size: 3rem;
+    }
   }
 
   &__hr {
+    border: 0;
+    height: 1px;
+
     height: 0.05rem;
     color: $color-2;
     width: 30%;
@@ -109,6 +124,16 @@
   }
   &__h2 {
     font-size: 2.5rem;
+    @media only screen and (max-width: $bp-large) {
+      //1100px
+
+      font-size: 2.25rem;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      //900px
+
+      font-size: 2rem;
+    }
   }
 
   &__button {
@@ -129,6 +154,12 @@
       box-shadow: 0 0.1rem 1rem $color-2;
       transform: translateY(2px);
     }
+
+    @media only screen and (max-width: $bp-medium) {
+      //900px
+
+      width: 15rem;
+    }
   }
 }
 //**********************************************PROJECTS
@@ -140,6 +171,38 @@
   & > *:not(:last-child) {
     margin-bottom: 8rem;
   }
+
+  @media only screen and (max-width: $bp-medium) {
+    //900px
+    padding: 8rem 4rem;
+  }
+}
+
+.separator {
+  position: relative;
+
+  padding: 3rem;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3rem;
+    height: 3rem;
+    background-image: linear-gradient(to right, $color-3, $color-1, $color-3);
+
+    border-radius: 50px;
+  }
+
+  &__hr {
+    margin: 0 auto;
+    background-image: linear-gradient(to right, $color-1, $color-3, $color-1);
+    width: 20rem;
+    height: 1px;
+    border: 0;
+  }
 }
 
 .project {
@@ -147,10 +210,15 @@
     display: flex;
 
     justify-content: center;
+
+    @media only screen and (max-width: $bp-largest) {
+      //1200px
+
+      flex-direction: column;
+    }
   }
   &__left {
     flex: 0 0 15%;
-    letter-spacing: 2rem;
   }
 
   &__header {
@@ -168,17 +236,49 @@
     -webkit-text-fill-color: transparent;
 
     &:hover {
-      background-image: linear-gradient(to left, $color-3, $color-2);
+      background-image: linear-gradient(to top, $color-3, $color-2);
+    }
+
+    @media only screen and (max-width: $bp-largest) {
+      //1200px
+      writing-mode: horizontal-tb;
+      transform: rotate(360deg);
+      text-align: center;
+    }
+
+    @media only screen and (max-width: $bp-large) {
+      //1100px
+
+      font-size: 8rem;
     }
   }
 
   &__right {
     display: flex;
     justify-content: space-evenly;
+    @media only screen and (max-width: $bp-largest) {
+      //1200px
+      justify-content: space-around;
+      margin-top: 8rem;
+    }
+    @media only screen and (max-width: $bp-large) {
+      //1100px
+
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__item {
     width: 40%;
+
+    @media only screen and (max-width: $bp-large) {
+      //1100px
+      width: 70%;
+      &:not(:last-child) {
+        margin-bottom: 8rem;
+      }
+    }
   }
   &__title {
     font-size: 2.5rem;
@@ -202,6 +302,11 @@
       transition: all 0.5s;
 
       opacity: 1;
+    }
+
+    @media only screen and (max-width: $bp-large) {
+      //1100px
+      max-width: 40rem;
     }
   }
 
@@ -275,6 +380,7 @@
   }
   &__technologies {
     display: flex;
+    justify-items: center;
     justify-content: space-evenly;
     align-items: center;
 
@@ -291,6 +397,11 @@
     font-size: 10rem;
 
     transition: all 0.3s;
+    @media only screen and (max-width: $bp-large) {
+      //1100px
+
+      font-size: 8rem;
+    }
 
     &:hover {
       transform: rotate(10deg);
@@ -305,19 +416,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+    @media only screen and (max-width: $bp-large) {
+      //1100px
 
-  &__hr {
-    width: 50%;
-    margin: 6rem auto;
-  }
-
-  &__center {
-    margin: auto;
-  }
-  &__item-center {
-    width: 50%;
-    margin: auto;
+      font-size: 1.6rem;
+    }
   }
 }
 //**********************************************SKILLS
@@ -344,6 +447,14 @@
     height: 15rem;
     width: 15rem;
     margin: 3rem;
+    &:hover {
+      opacity: 0.8;
+    }
+    @media only screen and (max-width: $bp-large) {
+      //1100px
+      height: 10rem;
+      width: 10rem;
+    }
   }
   &__img {
     display: block;
@@ -351,7 +462,7 @@
     height: 100%;
   }
 
-  &__h4 {
+  &__others {
     @extend .project__h4;
     text-align: center;
   }
@@ -363,6 +474,92 @@
     padding: 2rem;
     display: inline-block;
     font-size: 1.8rem;
+    position: relative;
+    &:hover::before {
+      transition: all 0.3s;
+      width: 3rem;
+      height: 2px;
+    }
+
+    &::before {
+      content: "";
+      background-color: $color-3;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 1.5rem;
+      width: 0;
+      height: 0;
+    }
+  }
+}
+
+//**********************************************COURSES
+.courses {
+  display: flex;
+  justify-content: center;
+
+  @media only screen and (max-width: $bp-largest) {
+    //1200px
+
+    flex-direction: column;
+  }
+
+  &__right {
+    flex: 0 0 25%;
+    @media only screen and (max-width: $bp-largest) {
+      //1200px
+
+      order: -1;
+      margin-bottom: 8rem;
+    }
+  }
+
+  &__left {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+
+    &:hover .courses__icon {
+      transition: all 0.3s;
+      transform: scale(1.4);
+    }
+  }
+
+  &__title {
+    @extend .skills__others;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+
+  &__icon {
+    margin-right: 1rem;
+    margin-bottom: -1rem;
+    font-size: 3rem;
+    color: $color-3;
+
+    @media only screen and (max-width: $bp-large) {
+      //1100px
+      font-size: 2.5rem;
+    }
+  }
+  &__text {
+    margin-left: 4.5rem;
+  }
+
+  &__header {
+    @extend .project__header;
+    transform: rotate(360deg);
   }
 }
 
@@ -372,8 +569,23 @@
   position: relative;
   &__wave {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: -15rem;
+    top: -6rem;
+
+    @media only screen and (max-width: $bp-largest) {
+      //1200px
+
+      left: 0;
+      top: 0;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      //900px
+      left: -15rem;
+    }
+    // @media only screen and (max-width: $bp-small) {
+    //   //700px
+    //   // top: 50px;
+    // }
   }
   &__header {
     @extend .skills__header;
@@ -390,15 +602,18 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
 
-    width: 30%;
+    width: 40rem;
     & > * {
+      margin: 1.5rem auto;
+      background-color: $color-2;
       border-radius: 25px;
       padding: 2rem;
       border: none;
       border-bottom: 2px solid $color-2;
       font-size: 1.6rem; //16px
+      width: 100%;
 
       font-family: "Josefin Sans", sans-serif;
 
@@ -410,7 +625,7 @@
 
   &__submit {
     @extend .header__button;
-    margin-top: 0;
+    margin-top: 2rem;
     border: none;
     color: $color-3;
   }
@@ -421,13 +636,26 @@
 
   background-color: $color-1;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   text-align: center;
+  @media only screen and (max-width: $bp-small) {
+    //700px
+    flex-direction: column;
+  }
 
   & > * {
     margin: 4rem;
     padding: 4rem;
+    @media only screen and (max-width: $bp-medium) {
+      //900px
+      padding: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      //700px
+      margin: 2rem;
+    }
   }
 
   &__nav {
@@ -450,8 +678,13 @@
   }
 
   &__center {
-    border-left: 1px solid $color-2;
-    border-right: 1px solid $color-2;
+    // border-left: 1px solid $color-2;
+    // border-right: 1px solid $color-2;
+    @media only screen and (max-width: $bp-small) {
+      //700px
+      order: 1;
+      border: none;
+    }
   }
   &__icon {
     margin-bottom: 2rem;

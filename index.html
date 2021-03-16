@@ -7,7 +7,7 @@
     <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap"
       rel="stylesheet"
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -24,18 +24,27 @@
   </head>
   <body>
     <nav class="nav">
-      <a href="#" class="nav__logo-link">
+      <a href="#home" class="nav__logo-link">
         <p class="nav__logo-text">pbj</p>
       </a>
       <ul class="nav__list">
-        <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">Work</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">skills</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">contact</a></li>
+        <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+        <li class="nav__item">
+          <a href="#project" class="nav__link">projects</a>
+        </li>
+        <li class="nav__item">
+          <a href="#skills" class="nav__link">skills</a>
+        </li>
+        <li class="nav__item">
+          <a href="#courses" class="nav__link">Courses</a>
+        </li>
+        <li class="nav__item">
+          <a href="#contact" class="nav__link">contact</a>
+        </li>
       </ul>
     </nav>
 
-    <div class="header">
+    <div class="header" id="home">
       <div class="header__overlay"></div>
       <video
         class="header__video"
@@ -51,15 +60,15 @@
         <hr class="header__hr" />
         <h2 class="header__h2">Web Developer and Designer</h2>
 
-        <a href="#" class="header__button">See work</a>
+        <a href="#project" class="header__button">See projects</a>
       </div>
     </div>
 
     <div class="main">
-      <section class="project">
+      <section class="project" id="project">
         <div class="project__upper">
           <div class="project__left">
-            <h4 class="project__header">work</h4>
+            <h4 class="project__header">projects</h4>
           </div>
 
           <div class="project__right">
@@ -160,11 +169,14 @@
           </div>
           <!--//right project ends-->
         </div>
-        <!--//upper pprojectends-->
+        <!--//upper project ends-->
       </section>
       <!-- section project ends -->
-      <hr />
-      <section class="skills">
+      <div class="separator">
+        <hr class="separator__hr" />
+      </div>
+
+      <section class="skills" id="skills">
         <h4 class="skills__header">skills</h4>
 
         <div class="skills__box">
@@ -233,22 +245,74 @@
             />
           </figure>
         </div>
-        <h4 class="skills__h4">Other skills:</h4>
+        <h4 class="skills__others">Other skills:</h4>
         <ul class="skills__list">
           <li class="skills__item">Media Queries</li>
           <li class="skills__item">BEM</li>
-          <li class="skills__item">CSS Grid</li>
+
           <li class="skills__item">Flexbox</li>
-          <li class="skills__item">Command line</li>
-          <li class="skills__item">NPM</li>
-          <li class="skills__item">Version control</li>
+          <li class="skills__item">Command Line</li>
+
+          <li class="skills__item">CSS Grid</li>
         </ul>
       </section>
       <!-- section skills ends -->
-      <hr />
+      <div class="separator">
+        <hr class="separator__hr" />
+      </div>
+      <section class="courses" id="courses">
+        <div class="courses__left">
+          <ul class="courses__list">
+            <li class="courses__item">
+              <h4 class="courses__title">
+                <i class="fas fa-check courses__icon"></i>
+                The complete Javascript course 2021: From Zero to expert
+              </h4>
+              <p class="courses__text">By Jonas Schmedtmann, Udemy Academy.</p>
+            </li>
+            <li class="courses__item">
+              <h4 class="courses__title">
+                <i class="fas fa-check courses__icon"></i>
+                The complete JQuery course: from beginner to advanced!
+              </h4>
+              <p class="courses__text">By Joe Parys, Udemy Academy.</p>
+            </li>
+            <li class="courses__item">
+              <h4 class="courses__title">
+                <i class="fas fa-check courses__icon"></i>
+                Bootstrap 4 from Scratch with 5 projects
+              </h4>
+              <p class="courses__text">By Brad Traversi, Udemy Academy.</p>
+            </li>
+            <li class="courses__item">
+              <h4 class="courses__title">
+                <i class="fas fa-check courses__icon"></i>
+                Advanced CSS and SASS: Flexbox, Grid, animations and more!
+              </h4>
+              <p class="courses__text">By Jonas Schmedtmann, Udemy Academy.</p>
+            </li>
+            <li class="courses__item">
+              <h4 class="courses__title">
+                <i class="fas fa-check courses__icon"></i>
+                Web Developer Bootcamp
+              </h4>
+
+              <p class="courses__text">By Colt Steele, Udemy Academy.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="courses__right">
+          <h4 class="courses__header">Courses</h4>
+        </div>
+      </section>
+      <!-- courses section ends-->
+      <div class="separator">
+        <hr class="separator__hr" />
+      </div>
     </div>
-    <!-- main -->
-    <section class="contact">
+    <!-- main ends-->
+
+    <section class="contact" id="contact">
       <svg
         class="contact__wave"
         xmlns="http://www.w3.org/2000/svg"
@@ -294,16 +358,16 @@
         <p class="footer__nav">Navigation</p>
         <ul class="footer__list">
           <li class="footer__item">
-            <a href="#" class="footer__link">home</a>
+            <a href="#home" class="footer__link">home</a>
           </li>
           <li class="footer__item">
-            <a href="#" class="footer__link">work</a>
+            <a href="#project" class="footer__link">projects</a>
           </li>
           <li class="footer__item">
-            <a href="#" class="footer__link">skills</a>
+            <a href="#skills" class="footer__link">skills</a>
           </li>
           <li class="footer__item">
-            <a href="#" class="footer__link">contact</a>
+            <a href="#contact" class="footer__link">contact</a>
           </li>
         </ul>
       </div>
@@ -318,5 +382,11 @@
       </div>
       <div class="footer__right">contact</div>
     </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/js.js"></script>
   </body>
 </html>

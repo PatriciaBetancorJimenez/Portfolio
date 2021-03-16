@@ -21,4 +21,10 @@ body {
   margin: 0 auto;
 
   font-family: "Josefin Sans", sans-serif;
+
+  @media only screen and (max-width: $bp-large) {
+    //1100px
+
+    font-size: 1.4rem;
+  }
 }
