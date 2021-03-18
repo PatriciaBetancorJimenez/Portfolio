@@ -1,16 +1,21 @@
 <?php
-$fullname=$_POST['fullname'];
-$email=$_POST['email'];
-$text=$_POST['text'];
 
-$email_from='Portfolio';
-$email_subject='New message from Portfolio';
-$email_body='Username: $fullname.\n'.
-'Visitor e-mail: $email.\n'.
-'Visitor message: $text.\n';
+$name = $_POST['name'];
+$email = $_POST['email'];
+$text = $_POST['text'];
 
-$to='patriciabetancorjimenez@gmail.com';
 
-mail($to,$email_from,$email_subject,$email_body);
+$to = "patriciabetancorjimenez@gmail.com";
+$subject = "New e-mail";
+$body = "You have received the next e-mail from your website. \n\n $name \n\n $email \n\n $text";
+
+mail($to, $subject, $body);
+
+echo "<body>
+
+<div><h1>Message sent! click <a href='index.html'> here </a> to go back</h1></div>
+
+
+</body>";
 
 ?>
