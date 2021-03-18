@@ -427,6 +427,11 @@
     border: 0.5rem solid $color-1;
     border-radius: 10px;
     position: relative;
+    @media only screen and (max-width: $bp-smallest) {
+      //600px
+
+      border: 0.3rem solid $color-1;
+    }
   }
 
   &__img-responsive {
@@ -438,6 +443,14 @@
     border-bottom: 2.5rem solid $color-1;
     border-radius: 10px;
     box-shadow: 0 1rem 5rem rgba($color-1, 0.6);
+
+    @media only screen and (max-width: $bp-smallest) {
+      //600px
+
+      width: 25%;
+      border: 0.3rem solid $color-1;
+      border-bottom: 1.5rem solid $color-1;
+    }
   }
 
   &__description {
@@ -712,8 +725,14 @@
     flex-direction: column;
     justify-content: center;
 
+    label.error {
+      //form validation messages
+      color: $color-2;
+    }
+
     width: 40rem;
-    & > * {
+    & > *:not(label.error) {
+      //all elements in form but error messages
       margin: 1.5rem auto;
       background-color: $color-2;
       border-radius: 25px;

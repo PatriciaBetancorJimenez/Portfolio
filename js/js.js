@@ -25,3 +25,7 @@ window.addEventListener("resize", function () {
     navList.classList.remove("nav__mobile");
   }
 });
+
+//*****************************FORM VALIDATION
+
+$(".contact__form").validate();
