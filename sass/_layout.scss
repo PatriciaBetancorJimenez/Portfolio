@@ -89,7 +89,7 @@
     top: 55px;
     left: 0;
     width: 100%;
-    height: 60vh;
+    height: 100vh;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
@@ -132,7 +132,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -15%);
+    transform: translate(-50%, -20%);
     z-index: 4;
     color: $color-2;
     & > *:not(:last-child) {
@@ -144,6 +144,7 @@
     font-size: 4.5rem;
     font-weight: 700;
     text-transform: uppercase;
+    padding: 0 3rem;
     @media only screen and (max-width: $bp-large) {
       //1100px
 
@@ -153,6 +154,11 @@
       //900px
 
       font-size: 3rem;
+    }
+    @media only screen and (max-width: $bp-smallest) {
+      //600px
+
+      font-size: 2rem;
     }
   }
 
@@ -169,15 +175,17 @@
   }
   &__h2 {
     font-size: 2.5rem;
-    @media only screen and (max-width: $bp-large) {
-      //1100px
 
-      font-size: 2.25rem;
-    }
     @media only screen and (max-width: $bp-medium) {
       //900px
 
       font-size: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      //600px
+
+      font-size: 1.25rem;
     }
   }
 
@@ -217,9 +225,14 @@
     margin-bottom: 8rem;
   }
 
-  @media only screen and (max-width: $bp-medium) {
-    //900px
-    padding: 8rem 4rem;
+  @media only screen and (max-width: $bp-small) {
+    //700px
+    padding: 8rem 3rem;
+  }
+
+  @media only screen and (max-width: $bp-tiny) {
+    //450px
+    padding: 6rem 1rem;
   }
 }
 
@@ -296,6 +309,10 @@
 
       font-size: 8rem;
     }
+    @media only screen and (max-width: $bp-small) {
+      //700px
+      font-size: 5rem;
+    }
   }
 
   &__right {
@@ -330,6 +347,11 @@
 
     text-align: center;
     text-transform: uppercase;
+    @media only screen and (max-width: $bp-small) {
+      //700px
+
+      font-size: 1.75rem;
+    }
   }
   &__figure {
     margin: 5rem auto;
@@ -389,6 +411,13 @@
     &--3 {
       @include link($color-4, $color-1);
     }
+
+    @media only screen and (max-width: $bp-smallest) {
+      //600px
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      width: 7rem;
+    }
   }
 
   &__img {
@@ -447,6 +476,11 @@
 
       font-size: 8rem;
     }
+    @media only screen and (max-width: $bp-smallest) {
+      //600px
+
+      font-size: 6rem;
+    }
 
     &:hover {
       transform: rotate(10deg);
@@ -465,6 +499,11 @@
       //1100px
 
       font-size: 1.6rem;
+    }
+    @media only screen and (max-width: $bp-smallest) {
+      //600px
+
+      font-size: 1.2rem;
     }
   }
 }
@@ -536,6 +575,11 @@
       width: 0;
       height: 0;
     }
+
+    @media only screen and (max-width: $bp-tiny) {
+      //450px
+      font-size: 1.4rem;
+    }
   }
 }
 
@@ -573,6 +617,12 @@
   &__item {
     &:not(:last-child) {
       margin-bottom: 4rem;
+
+      @media only screen and (max-width: $bp-tiny) {
+        //450px
+
+        margin-bottom: 2rem;
+      }
     }
 
     &:hover .courses__icon {
@@ -597,9 +647,20 @@
       //1100px
       font-size: 2.5rem;
     }
+    @media only screen and (max-width: $bp-tiny) {
+      //450px
+
+      font-size: 1.5rem;
+      margin-right: 0;
+    }
   }
   &__text {
     margin-left: 4.5rem;
+    @media only screen and (max-width: $bp-tiny) {
+      //450px
+
+      margin-left: 2rem;
+    }
   }
 
   &__header {
@@ -612,6 +673,7 @@
 .contact {
   background: linear-gradient(180deg, $color-3, $color-1);
   position: relative;
+  overflow: hidden;
   &__wave {
     position: absolute;
     left: -15rem;
@@ -627,10 +689,6 @@
       //900px
       left: -15rem;
     }
-    // @media only screen and (max-width: $bp-small) {
-    //   //700px
-    //   // top: 50px;
-    // }
   }
   &__header {
     @extend .skills__header;
@@ -640,6 +698,11 @@
     position: relative;
     z-index: 3;
     margin-top: 4rem;
+    @media only screen and (max-width: $bp-tiny) {
+      //450px
+
+      margin-top: 0;
+    }
   }
 
   &__form {
@@ -659,12 +722,22 @@
       border-bottom: 2px solid $color-2;
       font-size: 1.6rem; //16px
       width: 100%;
+      @media only screen and (max-width: $bp-smallest) {
+        //600px
+
+        font-size: 1rem; //10px
+      }
 
       font-family: "Josefin Sans", sans-serif;
 
       &:focus {
         outline: none;
       }
+    }
+    @media only screen and (max-width: $bp-smallest) {
+      //600px
+
+      width: 25rem;
     }
   }
 

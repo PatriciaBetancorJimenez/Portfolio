@@ -22,6 +22,6 @@ burgerButton.addEventListener("click", function () {
 //on window resize
 window.addEventListener("resize", function () {
   if (innerWidth > 900) {
-    navList.classList.remove("nav__mobile"); //mobile nav removed
+    navList.classList.remove("nav__mobile");
   }
 });
