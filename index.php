@@ -343,6 +343,35 @@
           d="M0,224L60,197.3C120,171,240,117,360,133.3C480,149,600,235,720,261.3C840,288,960,256,1080,250.7C1200,245,1320,267,1380,277.3L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
         ></path>
       </svg>
+      <?php 
+
+
+$result="";
+
+
+if(isset($_POST['submit'])){
+
+
+require 'phpMailer/PHPMailerAutoload.php';
+
+
+$mail = new PHPMailer;
+
+
+$mail->Host='smtp.gmail.com'; $mail->Port=587; $mail->SMTPAuth=true;
+      $mail->SMTPSecure='tls';
+      $mail->Username='patriciabetancorjimenez@gmail.com'; $mail->Password='';
+      $mail->setFrom($_POST['email'],$_POST['name']);
+      $mail->addAddress('patriciabetancorjimenez@gmail.com');
+      $mail->addReplyTo($_POST['email'],$_POST['name']); $mail->isHTML(true);
+      $mail->Subject='Form Submission Portfolio:' ; $mail->Body='
+      <h3>
+        Name :'.$_POST['name'].'<br />
+        Email: '.$_POST['email'].'<br />Message: '.$_POST['message'].'
+      </h3>
+      '; if(!$mail->send()){ $result = "Something went worng. Please try
+      again."; } else { $result="Thanks" .$_POST['name']. " for contacting us.
+      We'll get back to you soon!"; } } ?>
       <h4 class="contact__header">Contact</h4>
       <h4><?=$result; ?></h4>
       <div class="contact__form-box">
