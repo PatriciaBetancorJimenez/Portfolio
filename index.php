@@ -1,3 +1,5 @@
+<?php include 'sendemail.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -52,6 +54,7 @@
     </nav>
 
     <div class="header" id="home">
+    <?php echo $alert; ?>
       <div class="header__overlay"></div>
       <video
         class="header__video"
@@ -109,10 +112,11 @@
               <div class="project__description">
                 <h4 class="project__h4">Description:</h4>
                 <p class="project__text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Magnam eaque at distinctio corrupti officiis modi suscipit aut
-                  nisi, ut aperiam, alias, ex voluptate eveniet magni blanditiis
-                  exercitationem consequuntur sunt minima!
+                  Cake Universum's layout has been built with customized
+                  Bootstrap. Javascript has been used to create the image
+                  gallery. Forms are validated with the Bootstrap form
+                  validation plugin. Styles are added with Sass. Web 100%
+                  responsive.
                 </p>
 
                 <h4 class="project__h4">Technologies used:</h4>
@@ -162,10 +166,10 @@
               <div class="project__description">
                 <h4 class="project__h4">Description:</h4>
                 <p class="project__text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Magnam eaque at distinctio corrupti officiis modi suscipit aut
-                  nisi, ut aperiam, alias, ex voluptate eveniet magni blanditiis
-                  exercitationem consequuntur sunt minima!
+                  Aqua travel's layout has been built from scratch using CSS
+                  Flexbox and advanced CSS techniques. Media queries added for
+                  responsive design. Chat functionaly created with JQuery.
+                  Default browser form validation.
                 </p>
 
                 <h4 class="project__h4">Technologies used:</h4>
@@ -338,44 +342,17 @@
         viewBox="0 0 1440 320"
       >
         <path
-          fill="#fcfcfc"
+          fill="#fff"
           fill-opacity="1"
           d="M0,224L60,197.3C120,171,240,117,360,133.3C480,149,600,235,720,261.3C840,288,960,256,1080,250.7C1200,245,1320,267,1380,277.3L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
         ></path>
       </svg>
-      <?php 
 
-
-$result="";
-
-
-if(isset($_POST['submit'])){
-
-
-require 'phpMailer/PHPMailerAutoload.php';
-
-
-$mail = new PHPMailer;
-
-
-$mail->Host='smtp.gmail.com'; $mail->Port=587; $mail->SMTPAuth=true;
-      $mail->SMTPSecure='tls';
-      $mail->Username='patriciabetancorjimenez@gmail.com'; $mail->Password='';
-      $mail->setFrom($_POST['email'],$_POST['name']);
-      $mail->addAddress('patriciabetancorjimenez@gmail.com');
-      $mail->addReplyTo($_POST['email'],$_POST['name']); $mail->isHTML(true);
-      $mail->Subject='Form Submission Portfolio:' ; $mail->Body='
-      <h3>
-        Name :'.$_POST['name'].'<br />
-        Email: '.$_POST['email'].'<br />Message: '.$_POST['message'].'
-      </h3>
-      '; if(!$mail->send()){ $result = "Something went worng. Please try
-      again."; } else { $result="Thanks" .$_POST['name']. " for contacting us.
-      We'll get back to you soon!"; } } ?>
       <h4 class="contact__header">Contact</h4>
-      <h4><?=$result; ?></h4>
+
       <div class="contact__form-box">
-        <form action="form.php" method="post" class="contact__form">
+        <form action="" method="post" class="contact__form">
+          
           <input
             type="text"
             name="name"
@@ -437,7 +414,11 @@ $mail->Host='smtp.gmail.com'; $mail->Port=587; $mail->SMTPAuth=true;
         <p class="footer__name">&copy; 2021 PBJ Portfolio</p>
         <p class="footer__name">Patricia Betancor Jimenez &hearts;</p>
       </div>
-      <div class="footer__right">contact</div>
+
+      <div class="footer__right">
+        <p class="footer__email">E-mail</p>
+        <a class="footer__address">info@pbjportfolio.com</a>
+      </div>
     </footer>
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
@@ -446,5 +427,10 @@ $mail->Host='smtp.gmail.com'; $mail->Port=587; $mail->SMTPAuth=true;
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
     <script src="js/js.js"></script>
+     <script type="text/javascript">
+    if(window.history.replaceState){
+      window.history.replaceState(null, null, window.location.href);
+    }
+    </script>
   </body>
 </html>
