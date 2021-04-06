@@ -54,7 +54,7 @@
     </nav>
 
     <div class="header" id="home">
-    <?php echo $alert; ?>
+      <?php echo $alert; ?>
       <div class="header__overlay"></div>
       <video
         class="header__video"
@@ -180,9 +180,7 @@
                   <i class="fas fa-tag project__tag"
                     ><span class="project__tag-text">Jquery</span></i
                   >
-                  <i class="fas fa-tag project__tag"
-                    ><span class="project__tag-text">JS</span></i
-                  >
+
                   <i class="fas fa-tag project__tag"
                     ><span class="project__tag-text">CSS</span></i
                   >
@@ -193,6 +191,56 @@
           <!--//right project ends-->
         </div>
         <!--//upper project ends-->
+        <!--//bottom project starts-->
+        <div class="project__bottom">
+          <div class="project__item">
+            <h3 class="project__title">To Do List</h3>
+            <figure class="project__figure">
+              <div class="project__overlay project__overlay--3">
+                <div class="project__buttons">
+                  <a
+                    href="https://github.com/PatriciaBetancorJimenez/to-do-list"
+                    target="_blank"
+                    class="project__button project__button--3"
+                    >Code</a
+                  >
+                  <a
+                    href="https://patriciabetancorjimenez.github.io/to-do-list/"
+                    target="_blank"
+                    class="project__button project__button--3"
+                    >Web</a
+                  >
+                </div>
+              </div>
+              <img src="img/desktop3.png" alt="" class="project__img" />
+            </figure>
+
+            <div class="project__description">
+              <h4 class="project__h4">Description:</h4>
+              <p class="project__text">
+                Aqua travel's layout has been built from scratch using CSS
+                Flexbox and advanced CSS techniques. Media queries added for
+                responsive design. Chat functionaly created with JQuery. Default
+                browser form validation.
+              </p>
+
+              <h4 class="project__h4">Technologies used:</h4>
+              <div class="project__technologies project__technologies--3">
+                <i class="fas fa-tag project__tag"
+                  ><span class="project__tag-text">Sass</span></i
+                >
+
+                <i class="fas fa-tag project__tag"
+                  ><span class="project__tag-text">JS</span></i
+                >
+                <i class="fas fa-tag project__tag"
+                  ><span class="project__tag-text">CSS</span></i
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--//bottom project starts-->
       </section>
       <!-- section project ends -->
       <div class="separator">
@@ -270,11 +318,13 @@
         </div>
         <h4 class="skills__others">Other skills:</h4>
         <ul class="skills__list">
+          <li class="skills__item">JS ES6</li>
           <li class="skills__item">Media Queries</li>
           <li class="skills__item">BEM</li>
 
           <li class="skills__item">Flexbox</li>
           <li class="skills__item">Command Line</li>
+          <li class="skills__item">PHP Mailer</li>
 
           <li class="skills__item">CSS Grid</li>
         </ul>
@@ -352,7 +402,6 @@
 
       <div class="contact__form-box">
         <form action="" method="post" class="contact__form">
-          
           <input
             type="text"
             name="name"
@@ -427,10 +476,10 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
     <script src="js/js.js"></script>
-     <script type="text/javascript">
-    if(window.history.replaceState){
-      window.history.replaceState(null, null, window.location.href);
-    }
+    <script type="text/javascript">
+      if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+      }
     </script>
   </body>
 </html>

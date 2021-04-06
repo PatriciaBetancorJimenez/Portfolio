@@ -29,3 +29,14 @@ window.addEventListener("resize", function () {
 //*****************************FORM VALIDATION
 
 $(".contact__form").validate();
+
+//****************************F SUCCESS AND ERROR POP UP DELETE
+let success = document.querySelector(".alert-success");
+let error = document.querySelector(".alert-error");
+
+success.addEventListener("click", () => {
+  success.remove();
+});
+error.addEventListener("click", () => {
+  error.remove();
+});
