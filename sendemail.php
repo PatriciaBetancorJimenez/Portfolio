@@ -32,10 +32,12 @@ if(isset($_POST['submit'])){
 
     $mail->send();
     $alert = '<div class="alert-success">
-                 <h4>Message Sent! </h4>
+             
+                 <h4>Message Sent! X</h4>
                 </div>';
   } catch (Exception $e){
     $alert = '<div class="alert-error">
+                 
                 <h4>'.$e->getMessage().'
               </h4></div>';
   }
