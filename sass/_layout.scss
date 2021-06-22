@@ -135,10 +135,10 @@
     left: 50%;
     transform: translate(-50%, -20%);
     z-index: 4;
-    color: $color-2;
   }
 
   &__h1 {
+    color: $color-2;
     font-size: 4.5rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -190,7 +190,8 @@
     }
   }
 
-  &__button {
+  &__button,
+  &__cv {
     @include link($color-3, $color-1);
     margin: 3rem auto;
     border-radius: 20px;
@@ -199,8 +200,9 @@
     display: block;
     text-align: center;
     width: 20rem;
-
+    cursor: pointer;
     text-transform: uppercase;
+    cursor: pointer;
 
     box-shadow: 0 0.25rem 2rem $color-2;
     transition: all 0.3s;
@@ -220,6 +222,11 @@
       font-size: 1.2rem;
       width: fit-content;
     }
+  }
+  &__cv {
+    color: $color-3;
+    width: 6rem;
+    margin: 0;
   }
 }
 //**********************************************PROJECTS
